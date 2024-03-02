@@ -1,0 +1,84 @@
+package main
+
+// fmt.Println configuration
+const PRINT = false
+
+// this variable is used to link to a public instance of your fiber explorer inside the message (see example image)
+const EXPLORER_PUBLIC_URL = "https://explorer.skycoin.com"
+
+// these variables define where the bot can find your local fiber node instance to query the blockchain data
+// and the query intervall in seconds
+const LOCAL_FIBER_NODE_URL = "localhost"
+const LOCAL_FIBER_NODE_PORT = "6420"
+const LOCAL_FIBER_NODE_QUERY_INTERVALL_SECONDS = 10
+
+// these variables define the ticker symbol of your fiber coin and hours
+// you can also change your print precision of the amount, but suggested is to set it to 3.
+const FIBER_COIN_SYM = "SKY"
+const FIBER_HOUR_SYM = "SCH"
+const FIBER_PRINT_PRECISION = 3
+
+/*
+	the bot prints an emojie for every x coins that has been sent inside the transaction.
+	Here you can define:
+
+- if the emoji is printed
+- the amount of coins that is represented by one emoji
+- the emoji (just copy paste your preferred emoji out of telegram)
+- as premium telegram user you can also define a custom emoji to be printed instead of the default emoji via its id
+*/
+const FIBER_PRINT_WHALE_EMOJI = true
+const FIBER_WHALE_EMOJI_AMOUNT = 1000
+const FIBER_WHALE_TELEGRAM_DEFAULT_EMOJI = "🐋"
+const FIBER_WHALE_TELEGRAM_CUSTOM_EMOJI_ID = "your-custom-emoji-id"
+
+/*
+	the bot prints one emojie dependant on the amount of hours that has been sent inside the transaction.
+	Here you can define:
+
+- if the emoji is printed
+- the factor of hours that is used to calculate the emoji
+- the emojis to be printed (just copy paste your preferred emojis out of telegram)
+*/
+const FIBER_PRINT_HOUR_EMOJI = true
+const FIBER_HOUR_EMOJI_AMOUNT = 1000
+const FIBER_HOUR_EMOJI_1 = "🦐"
+const FIBER_HOUR_EMOJI_10 = "🦀"
+const FIBER_HOUR_EMOJI_100 = "🦑"
+const FIBER_HOUR_EMOJI_1K = "🐙"
+const FIBER_HOUR_EMOJI_10K = "🐬"
+const FIBER_HOUR_EMOJI_100K = "🦈"
+const FIBER_HOUR_EMOJI_500K = "🐳"
+const FIBER_HOUR_EMOJI_1M = "🐋"
+
+/*
+	the bot prints a fee burning emoji
+	Here you can define:
+
+- if the emoji is printed
+- the emoji to be printed
+*/
+const FIBER_PRINT_FEE_EMOJI = true
+const FIBER_FEE_TELEGRAM_DEFAULT_EMOJI = "🔥"
+
+/*
+	you can define known addresses, their alias and their emoji/custom emoji inside addresses.json.
+	If the send or receive address is defined here, the alias will be printedinstead of the addresss.
+	Here you can define:
+
+- if the emoji is printed
+*/
+const ADDRESS_ALIAS_PRINT_EMOJI = true
+
+/*
+when posting a message to the telegram api the bot needs to know two things:
+- the telegram_token of your bot
+- the chat_id where the bot sends its messages to
+
+See documentation on how to setup your bot on:
+
+	https://core.telegram.org/bots#how-do-i-create-a-bot
+	./README.md
+*/
+const TELEGRAM_TOKEN = "your-token"
+const TELEGRAM_CHAT_ID = yourID
