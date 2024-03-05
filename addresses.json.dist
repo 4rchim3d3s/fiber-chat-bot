@@ -1,7 +1,0 @@
-{
-    "Addresses":
-    [   
-        {"Pk": "Distribution-Address", "Alias":"FiberDistribution", "Emoji" : "☁", "Emoji_ID":""},
-        {"Pk": "CEX-Address", "Alias":"CEX <i>Hot</i>", "Emoji" : "🏦", "Emoji_ID":""}
-    ]
-}

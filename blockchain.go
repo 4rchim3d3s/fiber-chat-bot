@@ -60,9 +60,9 @@ type BlockchainBlock struct {
 	Size int `json:"size"`
 }
 
-func queryBlockData(block int) (resp BlockchainBlock, err error) {
+func queryBlockData(block int, cfg Config) (resp BlockchainBlock, err error) {
 
-	url := "http://" + LOCAL_FIBER_NODE_URL + ":" + LOCAL_FIBER_NODE_PORT + "/api/v1/block?seq=" + strconv.Itoa(block) + "&verbose=1"
+	url := "http://" + cfg.FiberNode.URL + ":" + cfg.FiberNode.Port + "/api/v1/block?seq=" + strconv.Itoa(block) + "&verbose=1"
 	method := "GET"
 
 	client := &http.Client{}
@@ -96,9 +96,9 @@ func queryBlockData(block int) (resp BlockchainBlock, err error) {
 	return result, nil
 }
 
-func queryBlockchainMetadata() (resp BlockchainMetadata, err error) {
+func queryBlockchainMetadata(cfg Config) (resp BlockchainMetadata, err error) {
 
-	url := "http://" + LOCAL_FIBER_NODE_URL + ":" + LOCAL_FIBER_NODE_PORT + "/api/v1/blockchain/metadata"
+	url := "http://" + cfg.FiberNode.URL + ":" + cfg.FiberNode.Port + "/api/v1/blockchain/metadata"
 	method := "GET"
 
 	client := &http.Client{}

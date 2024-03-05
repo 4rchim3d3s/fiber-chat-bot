@@ -1,0 +1,47 @@
+{
+    "explorer" : {
+        "public_url" : "https://explorer.skycoin.com"
+    },
+    "fiber_node" : {
+        "url" : "localhost",
+        "port": 6420,
+        "query_intervall_seconds" : 10,
+        "fiber_coin_ticker" : "SKY",
+        "fiber_hours_ticker": "SCH",
+        "fiber_print_precision": 3
+    },
+    "telegram" : {
+        "bot_token" : "Your-Bot-Token",
+        "chat_id" : -100
+    },
+    "emojis" : {
+        "print_coin_emojis" : true,
+        "coin_emoji_divisor" : 1000,
+        "coin_emoji" : "🐋",
+        "coin_custom_emoji_telegram_id" : "",
+        "print_hours_emoji" : true,
+        "hours_emoji_multiplicator" : 1000,
+        "hours_emoji_1" :"🦐",
+        "hours_emoji_10" :"🦀",
+        "hours_emoji_100" :"🦑",
+        "hours_emoji_1K" :"🐙",
+        "hours_emoji_10K" :"🐬",
+        "hours_emoji_100K" :"🦈",
+        "hours_emoji_500K" :"🐳",
+        "hours_emoji_1M" :"🐋",
+        "print_fee_emoji" : true,
+        "fee_emoji" : "🔥"
+    },
+    "addressbook":{
+        "print_alias_emoji" : true,
+        "addresses" : [   
+            {"pk": "95fmZ9b8XySDmkjG2tm3K1SEaHs3H7przE", "alias":"SkycoinDistribution", "emoji" : "☁", "custom_emoji_telegram_id":""},
+            {"pk": "HWteH5YSjqax9dnvkHsFPU4JzHiTxugbet", "alias":"SkywireRewards", "emoji" : "📡", "custom_emoji_telegram_id":""},
+            {"pk": "2iNNt6fm9LszSWe51693BeyNUKX34pPaLx8", "alias":"Binance <i>Hot</i>", "emoji" : "🏦", "custom_emoji_telegram_id":""},
+            {"pk": "WC4dEA4wwkZ526WZKh2krsQ4dmE6N6tTwg", "alias":"Binance <i>Cold</i>", "emoji" : "🏦", "custom_emoji_telegram_id":""},
+            {"pk": "2Khb2LscbALz924xUgq8y9zpmR8tNkjuAec", "alias":"LBank <i>Hot</i>", "emoji" : "🏦", "custom_emoji_telegram_id":""},
+            {"pk": "5FG7pEQJFXehh4sHr1cvqtKpynjWYPQVGo", "alias":"LBank <i>SCH</i>", "emoji" : "🏦", "custom_emoji_telegram_id":""}
+        
+        ]
+    }
+}
