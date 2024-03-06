@@ -4,7 +4,7 @@
     },
     "fiber_node" : {
         "url" : "localhost",
-        "port": 6420,
+        "port": "6420",
         "query_intervall_seconds" : 10,
         "fiber_coin_ticker" : "SKY",
         "fiber_hours_ticker": "SCH",

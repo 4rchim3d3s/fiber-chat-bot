@@ -64,8 +64,6 @@ func sendTextToTelegramChat(botToken string, chatId int, text string) (string, i
 func prettyPrintBlock(block BlockchainBlock, cfg Config) (prettyPrint string) {
 	p := message.NewPrinter(NUMBER_FORMAT)
 
-	//TODO: for each transaction --> are there blocks with more than one transaction?
-
 	//// add block number
 
 	blocknumber := p.Sprintf("%d", block.Header.Seq)
@@ -106,7 +104,11 @@ func prettyPrintBlock(block BlockchainBlock, cfg Config) (prettyPrint string) {
 	if cfg.Emojis.PrintCoinEmojis {
 		symbols, _ := bits.Div(0, uint(fCoins), uint(cfg.Emojis.CoinEmojiDivisor))
 		for i := 0; i < int(symbols); i++ {
-			prettyPrint = prettyPrint + fmt.Sprintf("<tg-emoji emoji-id=%s>%s</tg-emoji>", cfg.Emojis.CoinCustomEmojiTelegramID, cfg.Emojis.CoinEmoji)
+			if cfg.Emojis.CoinCustomEmojiTelegramID != "" {
+				prettyPrint = prettyPrint + fmt.Sprintf("<tg-emoji emoji-id=%s>%s</tg-emoji>", cfg.Emojis.CoinCustomEmojiTelegramID, cfg.Emojis.CoinEmoji)
+			} else {
+				prettyPrint = prettyPrint + cfg.Emojis.CoinEmoji
+			}
 		}
 		if symbols != 0 {
 			prettyPrint = prettyPrint + "\n"
