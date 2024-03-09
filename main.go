@@ -59,12 +59,12 @@ func function(lastBlock int, cfg Config) (newlastBlock int) {
 			fmt.Println(prettyBlockString)
 		}
 		fmt.Printf("%s Send Block:  %d to chat\n", time.Now().Local().Format(time.RFC1123), lastBlock)
-		_, retry_after, err := sendTextToTelegramChat(cfg.Telegram.BotToken, cfg.Telegram.ChatID, prettyBlockString)
+		_, retry_after, err := sendTextToTelegramChat(cfg.Telegram.BotToken, cfg.Telegram.ChatID, cfg.Telegram.ChatThreadID, prettyBlockString)
 		if err != nil {
 			fmt.Println(err)
 			fmt.Printf("%s Waiting %d seconds\n", time.Now().Local().Format(time.RFC1123), retry_after)
 			time.Sleep(time.Duration(retry_after) * time.Second)
-			_, _, err := sendTextToTelegramChat(cfg.Telegram.BotToken, cfg.Telegram.ChatID, prettyBlockString)
+			_, _, err := sendTextToTelegramChat(cfg.Telegram.BotToken, cfg.Telegram.ChatID, cfg.Telegram.ChatThreadID, prettyBlockString)
 			if err != nil {
 				fmt.Println(err)
 			}

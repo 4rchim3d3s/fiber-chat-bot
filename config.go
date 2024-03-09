@@ -20,8 +20,9 @@ type Config struct {
 		FiberPrintPrecision   int    `json:"fiber_print_precision"`
 	} `json:"fiber_node"`
 	Telegram struct {
-		BotToken string `json:"bot_token"`
-		ChatID   int    `json:"chat_id"`
+		BotToken     string `json:"bot_token"`
+		ChatID       int    `json:"chat_id"`
+		ChatThreadID string `json:"chat_thread_id"`
 	} `json:"telegram"`
 	Emojis struct {
 		PrintCoinEmojis           bool   `json:"print_coin_emojis"`

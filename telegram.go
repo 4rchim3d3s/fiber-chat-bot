@@ -25,22 +25,35 @@ type TelegramResponse struct {
 }
 
 // sendTextToTelegramChat sends a text message to the Telegram chat identified by its chat Id
-func sendTextToTelegramChat(botToken string, chatId int, text string) (string, int, error) {
+func sendTextToTelegramChat(botToken string, chatId int, chatThreadId string, text string) (string, int, error) {
 
 	//log.Printf("Sending to chat_id: %d\n Message:\n %s\n", chatId, text)
 	var telegramApi string = "https://api.telegram.org/bot" + botToken + "/sendMessage"
-	response, err := http.PostForm(
-		telegramApi,
-		url.Values{
+	var urlValues map[string][]string
+
+	if chatThreadId == "" {
+		urlValues = url.Values{
 			"chat_id":    {strconv.Itoa(chatId)},
 			"text":       {text},
 			"parse_mode": {"HTML"},
-		})
+		}
+	} else {
+		urlValues = url.Values{
+			"chat_id":           {strconv.Itoa(chatId)},
+			"text":              {text},
+			"parse_mode":        {"HTML"},
+			"message_thread_id": {chatThreadId},
+		}
+	}
+	response, err := http.PostForm(
+		telegramApi,
+		urlValues)
 
 	if err != nil {
 		log.Printf("error when posting text to the chat: %s", err.Error())
 		return "", 1, err
 	}
+
 	defer response.Body.Close()
 
 	var bodyBytes, errRead = io.ReadAll(response.Body)

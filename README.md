@@ -72,9 +72,11 @@ See information about a fiber node on https://github.com/skycoin/skycoin.git.
     ```json
     "telegram" : {
         "bot_token" : "your-bot-token",
-        "chat_id" : YourChatID
+        "chat_id" : YourChatID,
+        "chat_thread_id": "",
     },
     ```
+    ! If you want to post in a certain topic inside a supergroup just fill the "chat_thread_id" variable with the last number shown inside the t.me/c/.../. link inside the topic info.
 
 ### Installing the Bot
 
